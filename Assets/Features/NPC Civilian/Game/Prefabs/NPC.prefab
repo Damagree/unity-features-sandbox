@@ -1895,6 +1895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454711177526249568}
+  - component: {fileID: 1411032644701056614}
   - component: {fileID: 6736994004460490709}
   m_Layer: 8
   m_Name: PlayerArmature
@@ -1920,6 +1921,31 @@ Transform:
   - {fileID: 5057819773382978777}
   m_Father: {fileID: 5766875848371080958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1411032644701056614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6370513279542466511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ba6ed2e3c0e474295e1947a64a96f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcTransform: {fileID: 4454711177526249568}
+  FootstepAudioClips:
+  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
+  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
+  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
+  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
+  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
+  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
+  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
+  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
+  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+  FootstepAudioVolume: 0.25
 --- !u!95 &6736994004460490709
 Animator:
   serializedVersion: 5
@@ -2205,7 +2231,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -2220,17 +2246,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 7869820746381616589}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 0.2
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1.2
+  m_BaseOffset: 0.87
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2353870330509632503
@@ -2245,10 +2271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b5381f928593847a3ff001bb6e2922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToThink: 10
+  timeToThink: 30
   npcAnimator: {fileID: 6736994004460490709}
   actions:
-  - probability: 50
+  - probability: 80
     action: {fileID: 11400000, guid: c30055428239d18479990531b32c94b0, type: 2}
   - probability: 50
     action: {fileID: 11400000, guid: cb4a7749d719b5145add682e811015c7, type: 2}

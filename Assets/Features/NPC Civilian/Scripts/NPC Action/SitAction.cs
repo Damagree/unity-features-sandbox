@@ -49,14 +49,26 @@ namespace CodeZash.NPC {
             }
 
             // Double-check if the seat is still available after arriving
-            Debug.Log($"{GetType().Name} - seat [{seat != null}] - isTaken [{seat.IsTaken == false}] - controller [{seat.NPCCivilianController.name == controller.name}]");
+            //Debug.Log($"{GetType().Name} - seat [{seat != null}] - isTaken [{seat.IsTaken == false}] - controller [{seat.NPCCivilianController?.name == controller.name}]");
 
             if (seat != null && seat.IsTaken && seat.NPCCivilianController == controller) {
                 seat.IsTaken = true;
-                //Debug.Log($"Seats : {seat.IsTaken} usedBy {controller.name}");
-                if (seat.NPCCivilianController.npcAnimator != null) {
-                    seat.NPCCivilianController.npcAnimator.SetBool("sitting", true);
+
+                // Disable the NavMeshAgent to prevent it from overriding the position and rotation
+                agent.enabled = false;
+
+                controller.transform.position = seat.sitAnchor.position;
+                controller.transform.rotation = seat.sitAnchor.rotation;
+
+                //Debug.Log($"Seat taken by {controller.name}. Snapping to position {seat.sitAnchor.position} and rotation {seat.sitAnchor.rotation.eulerAngles}");
+
+                // If the NPC has an animator, set the "sitting" parameter to true
+                if (controller.npcAnimator != null) {
+                    controller.npcAnimator.SetBool("sitting", true);
                 }
+
+                // Re-enable the NavMeshAgent if needed
+                agent.enabled = true;
             } else {
                 // If the seat is taken, invoke the event and choose the next action
                 onArriveAtTakenSeat?.Invoke();
@@ -65,5 +77,7 @@ namespace CodeZash.NPC {
                 controller.ChooseNextAction();
             }
         }
+
+
     }
 }
