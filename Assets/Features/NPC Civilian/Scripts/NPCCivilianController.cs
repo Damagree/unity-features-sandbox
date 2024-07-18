@@ -14,6 +14,9 @@ namespace CodeZash.NPC {
         [Tooltip("Animator for the NPC (Walk when moving, idle when reached destination).")]
         public Animator npcAnimator;
 
+        public List<string> idleAnimationName = new List<string> { "idle" };
+        public List<string> walkAnimationName = new List<string> { "walk" };
+
         [SerializeField] private List<NpcStateAction> actions;
 
         private NavMeshAgent agent;
@@ -44,12 +47,27 @@ namespace CodeZash.NPC {
                     timer = timeToThink;
                 } else {
                     // Set animator to idle if the agent has reached its destination
-                    npcAnimator?.SetBool("walking", false);
+                    DoIdle();
                 }
             } else {
                 // Set animator to walking if the agent is moving
-                npcAnimator?.SetBool("walking", true);
+                DoWalking();
             }
+        }
+
+        bool isIdle = true;
+        public void DoWalking() {
+            if (!isIdle) return;
+
+            isIdle = false;
+            npcAnimator?.Play(walkAnimationName[Random.Range(0, walkAnimationName.Count)]);
+        }
+
+        public void DoIdle() {
+            if (isIdle) return;
+
+            isIdle = true;
+            npcAnimator?.Play(idleAnimationName[Random.Range(0, idleAnimationName.Count)]);
         }
 
         public void ChooseNextAction() {

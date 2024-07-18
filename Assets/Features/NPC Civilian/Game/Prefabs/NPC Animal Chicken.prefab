@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1944442058137217736}
   - component: {fileID: 8131119153853014643}
   m_Layer: 0
-  m_Name: NPC Animal A
+  m_Name: NPC Animal Chicken
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,12 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToThink: 30
-  npcAnimator: {fileID: 0}
+  npcAnimator: {fileID: 4466116732506643595}
+  idleAnimationName:
+  - idle
+  - eating
+  - sitting
+  walkAnimationName:
+  - walk
   actions:
   - probability: 80
     action: {fileID: 11400000, guid: c30055428239d18479990531b32c94b0, type: 2}
-  - probability: 50
-    action: {fileID: 11400000, guid: cb4a7749d719b5145add682e811015c7, type: 2}
 --- !u!1001 &1588190182135405291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,17 +163,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7272081685407443386}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bbc82b0e98ac54c4887303f156fd2ff3, type: 2}
     - target: {fileID: -4216859302048453862, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +228,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
+--- !u!95 &4466116732506643595 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}
+  m_PrefabInstance: {fileID: 1588190182135405291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6012541076536570353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e449a3f4597bf5b47b3bad629bc46740, type: 3}

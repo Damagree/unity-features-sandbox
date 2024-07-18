@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1102 &-4751713622090187292
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Walk
+  m_Name: walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,8 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5220180583894576131, guid: 906f78257145eff4495fcbcefd995846,
-    type: 3}
+  m_Motion: {fileID: -5220180583894576131, guid: 906f78257145eff4495fcbcefd995846, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -51,12 +50,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!1102 &52278942225503009
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Sitting
+  m_Name: sitting
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -69,8 +68,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1206324870565301242, guid: 906f78257145eff4495fcbcefd995846,
-    type: 3}
+  m_Motion: {fileID: 1206324870565301242, guid: 906f78257145eff4495fcbcefd995846, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -78,7 +76,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &825070469988416409
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,7 +94,7 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4751713622090187292}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 300, y: 200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -109,12 +107,12 @@ AnimatorStateMachine:
   m_DefaultState: {fileID: 9222385159215045455}
 --- !u!1102 &4246237007228962616
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Eating
+  m_Name: eating
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -127,8 +125,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2967894204655552049, guid: 906f78257145eff4495fcbcefd995846,
-    type: 3}
+  m_Motion: {fileID: -2967894204655552049, guid: 906f78257145eff4495fcbcefd995846, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -136,12 +133,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &9222385159215045455
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Idle
+  m_Name: idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -154,8 +151,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 5468854979830361310, guid: 906f78257145eff4495fcbcefd995846,
-    type: 3}
+  m_Motion: {fileID: 5468854979830361310, guid: 906f78257145eff4495fcbcefd995846, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

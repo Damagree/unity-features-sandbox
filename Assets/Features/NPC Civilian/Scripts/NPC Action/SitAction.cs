@@ -64,7 +64,7 @@ namespace CodeZash.NPC {
 
                 // If the NPC has an animator, set the "sitting" parameter to true
                 if (controller.npcAnimator != null) {
-                    controller.npcAnimator.SetBool("sitting", true);
+                    controller.npcAnimator.Play("sitting");
                 }
 
                 // Re-enable the NavMeshAgent if needed
